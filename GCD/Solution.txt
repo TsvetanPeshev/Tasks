@@ -1,0 +1,22 @@
+import java.util.Scanner;
+        import static java.lang.System.out;
+public class GCD {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String[] n = in.nextLine().split(" ");
+        int a = Integer.parseInt(n[0]);
+        int b = Integer.parseInt(n[1]);
+        int r, q;
+
+        while(true) {
+            q = a / b;
+            r = a - (q * b);
+            a = b;
+            b = r;
+            if(a % b == 0){
+                out.print(b);
+                break;
+            }
+        }
+    }
+}

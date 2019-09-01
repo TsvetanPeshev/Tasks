@@ -1,0 +1,11 @@
+During her vacation in Sunny Beach, Loni Elephant made many new friends. One day everyone went to the beach together. On a hot summer day, they enjoyed ice cream. Since the money they had was not enough, they decided to decide in a strange way how much ice cream to eat. They were numbered in sequence, with the first elephant being number 1, the second being number 2, etc. They asked the first random person to think of a number, the first digit showing how many balls of ice cream the elephant with number 1 would eat, the second showing how many balls ice cream will eat the elephant with number 2, etc. Your job is to write an icecream program that determines how many elephants will not eat ice cream by the number of elephants and the number imagined.
+Input
+The first line of the standard input introduces two integers n - the number of elephants and k - the intended number.
+Output
+On one line in the standard output, the program should output the number of elephants that will not eat ice cream.
+
+Sample
+Input:
+4 123
+Output:
+1

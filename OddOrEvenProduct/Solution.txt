@@ -1,0 +1,33 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import static java.lang.System.out;
+public class OddOrEvenProduct {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String n = in.nextLine();
+        int count = 1;
+        BigInteger oddProduct = BigInteger.valueOf(1);
+        BigInteger evenProduct = BigInteger.valueOf(1);
+        int number;
+        String str = in.nextLine();
+        Pattern p = Pattern.compile("-?\\d+");
+        Matcher m = p.matcher(str);
+
+        while(m.find()){
+            number = Integer.parseInt(m.group());
+            if(count % 2 == 0){
+               evenProduct = evenProduct.multiply(BigInteger.valueOf(number));
+            }else {
+                oddProduct = oddProduct.multiply(BigInteger.valueOf(number));
+            }
+            count++;
+        }
+        if(oddProduct.equals(evenProduct)){
+            out.print("yes " + oddProduct);
+        }else{
+            out.print("no " + oddProduct + " " +  evenProduct);
+        }
+    }
+}

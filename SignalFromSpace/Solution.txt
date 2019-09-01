@@ -1,0 +1,18 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import static java.lang.System.out;
+public class SignalFromSpace {
+    public static void main(String[] args)throws IOException {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder(input.readLine());
+        StringBuilder decoded = new StringBuilder().append(sb.charAt(0));
+
+        for(int i = 1; i < sb.length(); i++){
+            if(!(sb.charAt(i) == sb.charAt(i - 1))) {
+                decoded.append(sb.charAt(i));
+            }
+        }
+        out.print(decoded.toString());
+    }
+}

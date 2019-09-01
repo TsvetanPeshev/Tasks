@@ -1,0 +1,41 @@
+package com.company;
+import java.util.*;
+
+class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int numberOfJedis = Integer.parseInt(scanner.nextLine());
+        String[] allJedis =  scanner.nextLine().split(" ");
+
+        Deque<String> masters = new LinkedList<>();
+        Deque<String> knights = new LinkedList<>();
+        Deque<String> padawans = new LinkedList<>();
+
+        for (int i = 0; i <numberOfJedis ; i++) {
+            if(allJedis[i].charAt(0) == 'M'){
+                masters.add(allJedis[i]);
+            } else if (allJedis[i].charAt(0) == 'K' ){
+                knights.add(allJedis[i]);
+            } else {
+                padawans.add(allJedis[i]);
+            }
+
+        }
+
+        while(!masters.isEmpty()) {
+            System.out.print(masters.poll() + " ");
+        }
+
+        while(!knights.isEmpty()) {
+            System.out.print(knights.poll() + " ");
+        }
+
+        while(!padawans.isEmpty()) {
+            System.out.print(padawans.poll() + " ");
+        }
+
+        }
+
+    }

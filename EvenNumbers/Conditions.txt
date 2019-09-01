@@ -1,0 +1,15 @@
+Input
+The first line of the standard input introduces text that contains English letters, spaces, and numbers and ends with a period.
+
+Output
+On one line of standard output, the program should output the largest even number in the text. If there are no even numbers in the text, -1 is displayed.
+
+Sample Inputs:
+Input:
+Prihodi 23456 danaci 34 razhodi 23455 I drugi.
+Output:
+23456
+Input:
+No Numbers
+Output:
+-1

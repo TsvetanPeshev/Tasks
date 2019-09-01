@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+import static java.lang.System.out;
+public class PaperCutter {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        ArrayList<String> residueSheets = new ArrayList<String>
+                (Arrays.asList("A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"));
+        ArrayList<Integer> sheets = new ArrayList<>
+                               (Arrays.asList(1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1));
+        int count = 0;
+
+        while(n > 0){
+            if((n - sheets.get(count)) >= 0){
+                n -= sheets.get(count);
+                sheets.remove(count);
+                residueSheets.remove(count);
+            }else {
+                count++;
+            }
+        }
+        for (String residue : residueSheets) {
+            out.printf("%s%n", residue);
+        }
+    }
+}

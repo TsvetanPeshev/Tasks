@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        long decNum = in.nextLong();
+        StringBuilder sb = new StringBuilder();
+
+        if(decNum == 0){
+            out.print(0);
+            return;
+        }
+        while(decNum != 0){
+            sb.append(decNum % 2 == 0 ? 0 : 1);
+            decNum /= 2;
+        }
+        out.print(sb.reverse().toString());
+    }
+}

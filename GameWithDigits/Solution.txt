@@ -1,0 +1,48 @@
+import static java.lang.System.out;
+import java.util.Scanner;         
+public class Exercises {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        int player;
+        int winnersPoints = 0;
+        int counter = 0;
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int[] win = new int[n];
+
+        for(int i = 0; i < n; i++){ 
+            counter = 0;
+            player = in.nextInt();
+           while(player <= 0) {
+               player = in.nextInt();
+           }
+         for(int j = 2; j <= k; j++){
+
+             if(( player % j == 0) && (k % j == 0)){
+                 counter++;
+             }
+         }
+         if(counter >= winnersPoints){
+             winnersPoints = counter;
+
+             win[i]= winnersPoints;
+         }
+        }
+        if(winnersPoints > 0) {
+            out.println(winnersPoints);
+            for(int i = 0; i < win.length; i++){
+              if(win[i] == winnersPoints) {
+                  out.printf("%d ", i + 1);
+              }
+            }
+        }else{
+            out.print("No winners");
+        }
+
+
+
+
+    }
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+        import static java.lang.System.out;
+public class PrimesToN {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int number = in.nextInt();
+        boolean isPrime;
+        int maxDivider = (int)Math.sqrt(number);
+        StringBuilder primes = new StringBuilder();
+        
+        for (int i = 1; i <= number; i++) {
+            isPrime = true;
+            for (int j = 2; j <= maxDivider && isPrime; j++){
+                if(i % j == 0 && i != j){
+                    isPrime = false;
+                }
+            }
+            if(isPrime){
+                primes.append(i).append(" ");
+            }
+        }
+        primes.trimToSize();
+        out.print(primes);
+    }
+}

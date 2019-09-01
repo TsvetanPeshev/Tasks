@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class ArraySearch {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String[] list = in.nextLine().split(",");
+        int checkNum = 1;
+        boolean notAppear;
+        int count = 0;
+
+        while (checkNum <= list.length) {
+            notAppear = true;
+            for (int i = 0; i < list.length; i++) {
+                if (Integer.parseInt(list[i]) == checkNum) {
+                    notAppear = false;
+                    break;
+                }
+            }
+            if (notAppear) {
+                out.print(count > 0 ? "," + checkNum : checkNum);
+                count++;
+            }
+            checkNum++;
+        }
+    }
+}

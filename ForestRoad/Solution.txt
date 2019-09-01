@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class ForestRoad {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int width = in.nextInt();
+        int height = (2 * width) - 1;
+        char[][] forestPath = new char[height][width];
+        int row = 0, col = 0;
+
+        while(forestPath[height - 1][0] == 0){
+            forestPath[row][col] = '*';
+            if(forestPath[width - 1][width - 1] == 0){
+                for(int i = 0; i < width; i++){
+                    if(forestPath[row][i] == 0) {
+                        forestPath[row][i] = '.';
+                    }
+                    out.print(forestPath[row][i]);
+                }
+                row++;
+                col = col != (width - 1) ? col + 1 : col - 1;
+            }else{
+                for (int i = 0; i < width; i++) {
+                    if(forestPath[row][i] == 0) {
+                        forestPath[row][i] = '.';
+                    }
+                    out.print(forestPath[row][i]);
+                }
+                row++;
+                col--;
+            }
+            out.println();
+        }
+    }
+}

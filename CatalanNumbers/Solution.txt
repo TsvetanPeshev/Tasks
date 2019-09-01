@@ -1,0 +1,23 @@
+import java.math.BigInteger;
+        import java.util.Scanner;
+        import static java.lang.System.out;
+public class CatalanNumbers {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = n * 2;
+        int x = n + 1;
+        BigInteger factN = BigInteger.valueOf(1);
+        BigInteger factK = BigInteger.valueOf(1);
+        BigInteger factX = BigInteger.valueOf(x);
+
+        for(int i = 1; i <= k; i++){
+            if(i <= n) {
+                factN = factN.multiply(BigInteger.valueOf(i));
+            }
+                factK = factK.multiply(BigInteger.valueOf(i));
+        }
+        factX = factX.multiply(factN);
+        out.print(factK.divide(factX.multiply(factN)));
+    }
+}

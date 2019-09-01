@@ -1,0 +1,40 @@
+import java.util.Arrays;
+ import java.util.Scanner;
+import static java.lang.System.out;
+public class SubsetOfSumS {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int s = Integer.parseInt(in.nextLine());
+        long[] arr = Arrays.stream(in.nextLine().split(" "))
+                        .mapToLong(Long::parseLong).toArray();
+        long currentSum = 0;
+        boolean noMatch = true;
+        long startNumber, prevNumber,currentNumber;
+        Arrays.sort(arr);
+
+        for(int i = arr.length - 1; i > 0 && noMatch; i--){
+            startNumber = arr[i];
+            currentSum = startNumber;
+            if(startNumber == s){
+                break;
+            }
+            for(int j = i - 1; j >= 0 && noMatch; j--){
+                currentNumber = arr[j];
+                currentSum += currentNumber;
+                if(currentNumber == s || currentSum == s){
+                    noMatch = false;
+                    break;
+                }
+                if(currentSum > s){
+                    currentSum -= currentNumber;
+                    continue;
+                }
+            }
+        }
+        if(noMatch){
+            out.print("no");
+        }else{
+            out.print("yes");
+        }
+    }
+}

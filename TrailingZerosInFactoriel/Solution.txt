@@ -1,0 +1,16 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class TrailingZerosInFactorial {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        long n = in.nextInt();
+        long divider = 5;
+        long result = 0;
+
+        while(n >= divider){
+            result = result + (n / divider);
+            divider *= 5;
+        }
+        out.print(result);
+    }
+}

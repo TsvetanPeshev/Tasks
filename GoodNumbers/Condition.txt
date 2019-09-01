@@ -1,0 +1,18 @@
+Ivancho calls a number good if it is divisible by any number other than 0.
+For example: - 13 is not good - is not divisible by 3 - 36 is good - is divisible by 3 and 6 - 102 is good - is divisible by 1 and 2 - 103 is not good - is not divisible by 3
+Help Ivancho write a program that finds the number of all good numbers between given A and B (inclusive).
+Sign in
+From the first line, enter the numbers A and B.
+Exit
+List the number of good numbers in a single line.
+Limits
+1 <= A <= B <= 100000
+Examples
+Sign in
+Sign in
+1 10
+10
+42 142
+29
+256 768
+50

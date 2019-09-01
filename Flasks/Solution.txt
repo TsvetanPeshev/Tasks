@@ -1,0 +1,25 @@
+import static java.lang.System.out;
+import java.util.Scanner;
+
+public class Exercises {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n = in.nextInt();
+        double litre = in.nextDouble();
+        double prev = 1;
+        double currentLit;
+
+        for(int i = 3; i <= n; i ++){
+
+            currentLit = prev + (double)(i - 1);
+            prev = currentLit;
+
+            if((i % 2 == 1) && (currentLit >= litre)){
+
+                out.print(i);
+                break;
+            }
+        }
+    }
+}

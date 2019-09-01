@@ -1,0 +1,25 @@
+import java.util.Scanner;
+        import static java.lang.System.out;
+public class HexToDecimal {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder(in.nextLine().toUpperCase()).reverse();
+        char[] ch = {'A', 'B', 'C', 'D', 'E','F'};
+        int[] hexValues = {10, 11, 12, 13, 14, 15};
+        long n, r = 0;
+
+        for(int i = 0; i < sb.length(); i++) {
+            if(Character.isDigit(sb.charAt(i))) {
+                n = sb.charAt(i) - '0';
+                r = r + (n * (long)Math.pow(16, i));
+            }else{
+                for(int j = 0; j < ch.length; j++){
+                    if(ch[j] == sb.charAt(i)){
+                       r = r + (hexValues[j] * (long)Math.pow(16, i));
+                    }
+                }
+            }
+        }
+        out.print(r);
+    }
+}

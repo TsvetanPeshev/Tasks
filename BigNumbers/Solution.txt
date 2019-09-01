@@ -1,0 +1,26 @@
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Scanner;
+import static java.lang.System.out;
+public class BigNumbers {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String length = in.nextLine();
+        BigInteger result;
+        StringBuilder one = new StringBuilder(in.nextLine()
+                .replaceAll("\\s+", "")).reverse();
+        StringBuilder two = new StringBuilder(in.nextLine()
+                .replaceAll("\\s+", "")).reverse();
+        StringBuilder sum = new StringBuilder();
+
+        BigInteger firstNum = new BigInteger(one.toString());
+        BigInteger secondNum = new BigInteger(two.toString());
+
+        result = firstNum.add(secondNum);
+        sum.append(result).reverse();
+        String s = sum.toString();
+
+        out.print(s.replaceAll(".", "$0 "));
+
+    }
+}

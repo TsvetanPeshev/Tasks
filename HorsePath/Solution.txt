@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+import static java.lang.System.out;
+public class HorsePath {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[][] path = new int[n][n];
+        int position = 1;
+        int row = 0;
+        int col = 0;
+        boolean freePosition = true;
+
+        while(position <= (n * n)){
+            path[row][col] = position;
+            if(((row - 2) >= 0) && ((col - 1) >= 0) && path[row - 2][col - 1] == 0){
+                row -= 2;
+                col -= 1;
+                position++;
+            }else if(((row - 2) >= 0) && ((col + 1) < n) && path[row - 2][col + 1] == 0){
+                row -= 2;
+                col += 1;
+                position++;
+            }else if(((row - 1) >= 0) && ((col - 2) >= 0) && path[row - 1][col - 2] == 0){
+                row -= 1;
+                col -= 2;
+                position++;
+            }else if(((row - 1) >= 0) && ((col + 2) < n) && path[row - 1][col + 2] == 0){
+                row -= 1;
+                col += 2;
+                position++;
+            }else if(((row + 1) < n) && ((col - 2) >= 0) && path[row + 1][col - 2] == 0){
+                row += 1;
+                col -= 2;
+                position++;
+            }else if(((row + 1) < n) && ((col + 2) < n) && path[row + 1][col + 2] == 0){
+                row += 1;
+                col += 2;
+                position++;
+            }else if(((row + 2) < n) && ((col - 1) >= 0) && path[row + 2][col - 1] == 0){
+                row += 2;
+                col -= 1;
+                position++;
+            }else if(((row + 2) < n) && ((col + 1) < n) && path[row + 2][col + 1] == 0){
+                row += 2;
+                col += 1;
+                position++;
+            }else{
+                position++;
+                for (int i = 0; i < n && freePosition; i++) {
+                    for (int j = 0; j < n && freePosition; j++) {
+                        if(path[i][j] == 0){
+                            path[i][j] = position ;
+                            row = i;
+                            col = j;
+                            freePosition = false;
+                        }
+                    }
+
+                }
+                freePosition = true;
+            }
+        }
+        for (int[] i : path) {
+            String s = "";
+            for (int j : i) {
+                s += j + " ";
+            }
+            out.println(s.trim());
+        }
+    }
+}

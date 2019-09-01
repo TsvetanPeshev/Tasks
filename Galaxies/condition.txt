@@ -1,0 +1,33 @@
+Given a matrix of 1s (stars) and 0s (empty space), calculate the size of each galaxy.
+À galaxy is formed when each star is connected to another either vertically or horizontally. 
+The size of a galaxy is the number of stars in it.
+Input
+Read from the standard input:
+On the first line - N M - dimensions of the matrix.
+On the next N lines - each of the rows.
+Output
+Print to the standard output:
+Sizes must be sorted in descending order.
+Print the size of each galaxy on a new line.
+Constraints
+1 <= N, M <= 20
+Sample Tests
+Input:
+5 10
+1000000010
+1111000011
+1000000000
+1100001000
+1000011100
+Output:
+9
+4
+3
+Input:
+4 4
+0000
+0110
+0110
+0000
+Output:
+4

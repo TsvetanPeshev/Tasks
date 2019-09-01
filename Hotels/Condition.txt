@@ -1,0 +1,13 @@
+When it arrived in Sunny Beach this year, Elephant Lonnie saw that so many hotels had been built that there was no longer any frontline location to the sea. On this first line, each hotel had a certain height. The elephant noticed that if he stood at the beginning of the first line of the complex and looked at the hotels, he saw some hotels, and if he stood at the end - he saw others. Now Lonnie wonders how many hotels are seen if she stands at the beginning of the first line, and how many hotels can be seen if she stands at the end. A hotel is visible if there are only lower hotels than it before. Write a hotels program that defines this.
+Input
+The first line of the standard input introduces an integer positive N number of hotels. In the next line of the entrance are set N numbers - the heights of each of the hotels.
+
+Output
+Two numbers are printed on the standard output - the number of hotels seen from start to finish and the number of hotels viewed from end to start.
+
+Samples:
+Input:
+5 
+1 2 3 4 5
+Output:
+5 1

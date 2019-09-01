@@ -1,0 +1,23 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+import static java.lang.System.out;
+public class Tribonacci {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        long element1 = in.nextLong();
+        long element2 = in.nextLong();
+        long element3 = in.nextLong();
+        int n = in.nextInt();
+        BigInteger[] values = new BigInteger[n];
+
+        values[0] = BigInteger.valueOf(element1);
+        values[1] = BigInteger.valueOf(element2);
+        values[2] = BigInteger.valueOf(element3);
+
+        for(int i = 3; i < values.length; i++){
+            values[i] = values[i - 1].add(values[i -2])
+                    .add(values[i - 3]);
+        }
+        out.print(values[n - 1]);
+    }
+}

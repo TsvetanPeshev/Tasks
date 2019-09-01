@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class GoodDigits {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String[] border = in.nextLine().split(" ");
+        int a = Integer.parseInt(border[0]);
+        int b = Integer.parseInt(border[1]);
+        String number;
+        boolean isGood;
+        int digit , coount = 0;
+        
+        for (int i = a; i <= b ; i++) {
+            number = Integer.toString(i);
+            isGood = true;
+            for(int j = 0; j < number.length(); j++){
+                digit = number.charAt(j) - '0';
+                if(digit == 0) {
+                    continue;
+                }
+                if(i % digit != 0){
+                    isGood = false;
+                }
+            }
+            if(isGood){
+                coount++;
+            }
+        }
+        out.print(coount);
+    }
+}

@@ -1,0 +1,49 @@
+import static java.lang.System.out;
+
+import java.util.Scanner;
+
+public class SpirallMatrix {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int counter = 1;
+        int row = 0;
+        int col = 0;
+        int[][] spiral = new int[n][n];
+        spiral[row][col] = counter;
+
+        do {
+            while((col + 1) < n && spiral[row][col + 1] == 0){
+                col++;
+                counter++;
+                spiral[row][col] = counter;
+            }
+            while((row + 1) < n && spiral[row + 1][col] == 0){
+                row++;
+                counter++;
+                spiral[row][col] = counter;
+            }
+            while((col - 1) >= 0 && spiral[row][col - 1] == 0){
+                col--;
+                counter++;
+                spiral[row][col] = counter;
+            }
+            while((row - 1) >= 0 && spiral[row - 1][col] == 0){
+                row--;
+                counter++;
+                spiral[row][col] = counter;
+            }
+        } while (counter < n * n);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if(j > 0){
+                    out.printf(" %d", spiral[i][j]);
+                }else{
+                    out.printf("%d", spiral[i][j]);
+                }
+            }
+            out.println();
+        }
+    }
+}

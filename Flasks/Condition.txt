@@ -1,0 +1,10 @@
+There is only one time for a pharmacist. He sells all sorts of medicines and potions he prepares himself. In addition, you can see many things in the secrets of lightweight that were also very precise in abbreviations that fit. One day, at a local fair, they bought a huge box of N boxes that were the same in shape and color, but each was larger than the previous ones. For each of these numbers 1 to N. are written in sequence.The pharmacist hastened to ask the strange salesman how to find out how many liters were collected in each jar. The seller told him: "These jars are magic. Never place anything in the first flask, as much as you pour it into it will always be empty. Each subsequent flask collects as many liters as if you added to the number of the previous flask the liters collected by the previous flask. And remember - if you break an odd number flask nothing will happen, but if you break an even number flask all the even number flasks will disappear. "
+Don't you think, as he pulled the huge box home, the pharmacist stumbled, the box swayed and one of the flasks rolled and broke. In an instant, all the flasks, along with their even numbered seats, disappeared. The pharmacist started to cry "why did you have to drop an even numbered flask ...". But in the end, he came home and said, "Well, it's not so bad. However, I have all the odd flasks left. "
+For years, even to this day, he poured the cooked broth into a flask that seemed to him approximately equal to the amount he had prepared. Unfortunately, its decoctions interact with the residual air in the flasks and collapse. In order not to do this, the pharmacist must find the smallest flask that collects the amount of decoction prepared.
+Help the poor pharmacist by writing a program that displays the number of the flask you are looking for.
+
+Input
+The number of flasks and the amount of decoction. The decoction is always collected in at least one of the flasks (ie there is always a solution).
+
+Output
+The number of the smallest flask that holds the decoction

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String num = in.nextLine();
+        char ch;
+        int decimalValue = 1;
+
+        if(num.equals("0")){
+            out.print("0");
+            return;
+        }
+        for (int i = 1; i < num.length(); i++) {
+            ch = num.charAt(i);
+            decimalValue = (decimalValue * 2) + (ch - '0');
+        }
+        out.print(decimalValue);
+
+    }
+}

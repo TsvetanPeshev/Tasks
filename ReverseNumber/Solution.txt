@@ -1,0 +1,10 @@
+import java.util.Scanner;
+        import static java.lang.System.out;
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder(in.nextLine());
+
+        out.print(sb.reverse());
+    }
+}
