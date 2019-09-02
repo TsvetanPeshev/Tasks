@@ -1,2 +1,2 @@
 # Tasks
-Some tasks that i solved
+Some tasks that I solved
