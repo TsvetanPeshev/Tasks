@@ -1,0 +1,17 @@
+Dothraki are planning an attack to usurp King Robert's throne. King Robert learns of this conspiracy from Raven and plans to lock the single door through which the enemy can enter his kingdom.
+But, to lock the door he needs a key that is an anagram of a palindrome. He starts to go through his box of strings, checking to see if they can be rearranged into a palindrome.
+Function Description
+
+Complete the gameOfThrones function below to determine whether a given string can be rearranged into a palindrome. If it is possible, return YES, otherwise return NO.
+
+gameOfThrones has the following parameter(s):
+
+s: a string to analyze
+
+Input Format
+
+A single line which contains , the input string.
+
+Output Format
+
+A single line which contains YES or NO.
